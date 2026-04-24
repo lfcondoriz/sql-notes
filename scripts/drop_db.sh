@@ -3,7 +3,7 @@
 # ═══════════════════════════════════════════════════════════
 # Script: Eliminar una base de datos específica
 # Uso: ./scripts/drop_db.sh <nombre_base>
-# Ejemplo: ./scripts/drop_db.sh ejemplo_nba
+# Ejemplo: ./scripts/drop_db.sh nba
 # ═══════════════════════════════════════════════════════════
 
 set -e

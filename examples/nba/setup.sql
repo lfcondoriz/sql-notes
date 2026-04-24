@@ -5,14 +5,14 @@
 
 -- Terminar conexiones existentes
 SELECT pg_terminate_backend(pid) FROM pg_stat_activity 
-WHERE datname = 'ejemplo_nba' AND pid <> pg_backend_pid();
+WHERE datname = 'nba' AND pid <> pg_backend_pid();
 
 -- Eliminar base de datos si existe
-DROP DATABASE IF EXISTS ejemplo_nba;
+DROP DATABASE IF EXISTS nba;
 
-CREATE DATABASE ejemplo_nba;
+CREATE DATABASE nba;
 
-\c ejemplo_nba
+\c nba
 
 DROP TABLE IF EXISTS EntrenadorParticipaCompeticion CASCADE;
 DROP TABLE IF EXISTS JugadorParticipaExhibicion CASCADE;
@@ -310,4 +310,4 @@ COPY EntrenadorParticipaCompeticion (periodoCompeticion, nombreCompeticion, idEq
 FROM '/examples/nba/data/EntrenadorParticipaCompeticion.csv'
 DELIMITER ','
 CSV HEADER;
-\echo '✅ Base de datos ejemplo_nba creada correctamente'
+\echo '✅ Base de datos nba creada correctamente'

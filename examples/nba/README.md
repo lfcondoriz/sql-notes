@@ -23,7 +23,7 @@ Ejemplo completo de una base de datos relacional con información de equipos, ju
 ./scripts/load_example.sh nba
 ```
 
-Luego conecta desde **DBeaver** a la base de datos **`ejemplo_nba`**.
+Luego conecta desde **DBeaver** a la base de datos **`nba`**.
 
 ## 💡 Queries para practicar
 
