@@ -147,6 +147,34 @@ Salida esperada:
 
 ---
 
+### NBA (`examples/nba/`)
+
+**Complejidad:** Avanzada | **Datos:** 5MB+ | **Tablas:** 18 | **Base de datos real**
+
+**Temas:**
+- Modelado de base de datos complejo con 18 tablas
+- Relaciones muchos-a-muchos
+- Datos reales de la NBA
+- Análisis y reporting
+- JOINs avanzados
+- Agregaciones complejas
+
+**Tablas principales:**
+- `Evento`, `Competicion`, `Exhibicion` - Eventos y competiciones
+- `Equipo`, `Persona`, `Jugador`, `Entrenador` - Entidades principales
+- `Partido`, `JuegaPartido` - Información de partidos
+- `DrafteaJugador`, `JugadorParticipaCompeticion`, etc. - Relaciones
+
+**Datos incluidos:**
+- 1,100+ jugadores
+- 30 equipos
+- 5,000+ partidos
+- Estadísticas detalladas por jugador
+
+Perfecto para práctica real y análisis complejos.
+
+---
+
 ## 🔄 Flujo de Trabajo Típico
 
 ### Sesión 1: Aprender Básico
