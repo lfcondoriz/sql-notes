@@ -226,91 +226,88 @@ CREATE TABLE EntrenadorParticipaCompeticion (
 -- NOTA: Ajusta las rutas a los archivos CSV según tu estructura de carpetas
 -- ═══════════════════════════════════════════════════════════
 
--- Definir variable con la ruta de los CSV
-\set DATA_DIR '/examples/nba/data'
-
 COPY Evento (periodo, nombre)
-FROM '<DATA_DIR>/evento.csv'
+FROM '/examples/nba/data/evento.csv' 
 DELIMITER ',' 
 CSV HEADER;
 
 COPY Competicion (periodoEvento, nombreEvento)
-FROM '<DATA_DIR>/competicion.csv'
+FROM '/examples/nba/data/competicion.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY Exhibicion (periodoEvento, nombreEvento, ciudad, estado, pais)
-FROM '<DATA_DIR>/exhibicion.csv'
+FROM '/examples/nba/data/exhibicion.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY Equipo (id, nombre, ciudad, estado, estadio, pais, fechaFundacion, conferencia)
-FROM '<DATA_DIR>/teams.csv'
+FROM '/examples/nba/data/teams.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY Persona (id, nombre, apellido, fechaNacimiento, nacionalidad)
-FROM '<DATA_DIR>/personas.csv'
+FROM '/examples/nba/data/personas.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY Jugador (idPersona, estatura, peso, manoHabil)
-FROM '<DATA_DIR>/jugador.csv'
+FROM '/examples/nba/data/jugador.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY JugadorPosicion (idPersona, posicion)
-FROM '<DATA_DIR>/jugadorPosicion.csv'
+FROM '/examples/nba/data/jugadorPosicion.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY Entrenador (idPersona, seleccion)
-FROM '<DATA_DIR>/entrenadores.csv'
+FROM '/examples/nba/data/entrenadores.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY Premio (periodoEvento, nombreEvento, nombre)
-FROM '<DATA_DIR>/premio.csv'
+FROM '/examples/nba/data/premio.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY premioindividual (periodoevento, nombreevento, nombrepremio, idpersona)
-FROM '<DATA_DIR>/premioIndividual.csv'
+FROM '/examples/nba/data/premioIndividual.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY premiocolectivo (periodoevento, nombreevento, nombrepremio, idequipo)
-FROM '<DATA_DIR>/premioColectivo.csv'
+FROM '/examples/nba/data/premioColectivo.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY partido (id, periodocompeticion, nombrecompeticion, idequipolocal, idequipovisitante, fecha, puntoslocal, puntosvisitante, instancia)
-FROM '<DATA_DIR>/partido.csv'
+FROM '/examples/nba/data/partido.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY JuegaPartido (idJugador, idPartido, puntos, asistencias, tapones, rebotes, robos, porcentajeTirosLibres, porcentajeTirosCampo, porcentajeTriples)
-FROM '<DATA_DIR>/juegaPartido.csv'
+FROM '/examples/nba/data/juegaPartido.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY DrafteaJugador (idJugador, idEquipo, anio, posicionDraft)
-FROM '<DATA_DIR>/DrafteaJugador.csv'
+FROM '/examples/nba/data/DrafteaJugador.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY JugadorParticipaCompeticion (periodoCompeticion, nombreCompeticion, idEquipo, idJugador)
-FROM '<DATA_DIR>/JugadorParticipaCompeticion.csv'
+FROM '/examples/nba/data/JugadorParticipaCompeticion.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY JugadorParticipaExhibicion (periodoExhibicion, nombreExhibicion, idJugador, participaTriples, participaDunk, participaSkills, equipoRepresentado)
-FROM '<DATA_DIR>/jugadorParticipaExhibicion.csv'
+FROM '/examples/nba/data/jugadorParticipaExhibicion.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY EntrenadorParticipaCompeticion (periodoCompeticion, nombreCompeticion, idEquipo, idEntrenador)
-FROM '<DATA_DIR>/EntrenadorParticipaCompeticion.csv'
+FROM '/examples/nba/data/EntrenadorParticipaCompeticion.csv'
 DELIMITER ','
 CSV HEADER;
 \echo '✅ Base de datos ejemplo_nba creada correctamente'
