@@ -87,6 +87,12 @@ Salida esperada:
 3. Ejecuta (Ctrl+Enter)
 4. Ve los resultados
 
+### Paso 6: Eliminar una base de datos específica (opcional)
+
+```bash
+./scripts/drop_db.sh base_datos
+```
+
 ## 📚 Ejemplos Disponibles
 
 ### 01-BÁSICO (`examples/01-basico/`)
