@@ -158,7 +158,7 @@ chmod +x scripts/*.sh
 ./scripts/load_example.sh 01-basico   # 📦 Carga datos
 
 # DBeaver
-# Opens → Conecta a localhost:5432
+# Opens → Conecta a localhost:5433
 # → Abre ejemplo_basico
 # → Ejecuta queries de ejemplos/01-basico/queries.sql
 ```
@@ -212,9 +212,11 @@ docker logs sql_practice
 
 ### Conectarse directamente a PostgreSQL (sin DBeaver)
 ```bash
-docker exec -it sql_practice psql -U user -p 5432
-# Nota: el puerto 5432 es DENTRO del contenedor
-# desde fuera accedes vía puerto 5433
+docker exec -it sql_practice psql -U user -d base_datos -p 5432
+```
+
+```bash
+docker exec -it sql_practice psql -U user -d ejemplo_basico -p 5432
 ```
 
 Dentro del contenedor:

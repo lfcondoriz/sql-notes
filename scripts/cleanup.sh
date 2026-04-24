@@ -17,8 +17,14 @@ fi
 
 if [ -d "data" ]; then
     echo "🗑️  Eliminando volumen de datos..."
-    rm -rf data
-    echo "✅ Volumen eliminado"
+    # Usar sudo si es necesario (los permisos pertenecen a PostgreSQL dentro del contenedor)
+    if rm -rf data 2>/dev/null; then
+        echo "✅ Volumen eliminado"
+    else
+        echo "⚠️  Se necesitan permisos de administrador para limpiar completamente"
+        sudo rm -rf data
+        echo "✅ Volumen eliminado con sudo"
+    fi
 fi
 
 echo ""

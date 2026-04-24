@@ -12,17 +12,17 @@ echo "🚀 Iniciando contenedor PostgreSQL..."
 docker compose up -d
 
 # Esperar a que PostgreSQL esté listo
-echo "⏳ Esperando a que PostgreSQL esté listonline..."
+echo "⏳ Esperando a que PostgreSQL esté listo..."
 until docker exec sql_practice pg_isready -U user > /dev/null 2>&1; do
   sleep 1
 done
 
-echo "✅ PostgreSQL está listo en localhost:5432"
+echo "✅ PostgreSQL está listo en localhost:5433"
 echo ""
 echo "Credenciales por defecto:"
 echo "  Usuario: user"
 echo "  Contraseña: password"
-echo "  Puerto: 5432"
+echo "  Puerto: 5433"
 echo ""
 echo "📝 Para cargar un ejemplo:"
 echo "  ./scripts/load_example.sh 01-basico"
